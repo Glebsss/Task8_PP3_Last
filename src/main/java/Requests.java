@@ -26,8 +26,6 @@ public class Requests {
         User user = new User(id, "James", "Brown", (byte) 23);
         HttpEntity<User> entity = new HttpEntity<>(user, httpHeaders);
         String s1 = restTemplate.exchange(URL, HttpMethod.POST, entity, String.class).getBody();
-//        new ResponseEntity<>(s1, HttpStatus.OK);
-
         return s1;
     }
 
@@ -36,7 +34,6 @@ public class Requests {
         user.setId(id);
         HttpEntity<User> entity = new HttpEntity<>(user, httpHeaders);
         String s2 = restTemplate.exchange(URL, HttpMethod.PUT, entity, String.class).getBody();
-//        new ResponseEntity<>(s2, HttpStatus.OK);
         return s2;
     }
 
